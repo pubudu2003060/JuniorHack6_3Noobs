@@ -3,7 +3,7 @@ package org.example.interfaces;
 import java.util.Scanner;
 
 public class AddHostelsInterface {
-    public int createAddHostelDetailsInterface() {
+    public static int createAddHostelDetailsInterface() {
         System.out.println("Add A Hostl....");
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Hostel Name: ");

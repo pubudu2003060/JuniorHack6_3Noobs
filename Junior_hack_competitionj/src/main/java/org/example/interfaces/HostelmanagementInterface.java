@@ -17,7 +17,9 @@ public class HostelmanagementInterface {
         int optionHostelManagement = input.nextInt();
 
         switch (optionHostelManagement) {
-            case 1:
+            case 1:AddHostelsInterface.createAddHostelDetailsInterface();break;
+            case 3:ViewARoomByHostelIdInterface.creatViewRoomByHostelIdInterface();break;
+            case 2:
         }
         return optionHostelManagement;
     }
