@@ -15,6 +15,10 @@ public class HostelmanagementInterface {
         System.out.println("[0] Main Menu");
 
         int optionHostelManagement = input.nextInt();
+
+        switch (optionHostelManagement) {
+            case 1:
+        }
         return optionHostelManagement;
     }
 }
