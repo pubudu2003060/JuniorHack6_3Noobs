@@ -4,6 +4,7 @@ This repository is for our Junior Hack final round.
 we have created a hostel management system to manage students,hostels,rooms and to allocate rooms to students.
 here we have used pure java.
 We have used the oop principles and the exception handling as well
+database name junior_hack
 
 Student management
 -add student
