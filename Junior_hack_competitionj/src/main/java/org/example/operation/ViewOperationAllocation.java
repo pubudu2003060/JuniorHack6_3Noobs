@@ -1,8 +1,12 @@
 package org.example.operation;
 
+import org.example.DTO.AllocationDTO;
 import org.example.databaseConnection.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ViewOperationAllocation implements Operation {
     @Override
@@ -15,15 +19,23 @@ public class ViewOperationAllocation implements Operation {
         String sql = "select * from allocations where allocation_id = ?";
 
         try (PreparedStatement preparedStatement = databaseConnection.prepareStatement(sql)) {
-            preparedStatement.setString(1, operation.toString());
-            preparedStatement.setString(2, operation.toString());
-            preparedStatement.setString(3, operation.toString());
-            int responce = preparedStatement.executeUpdate();
-            if (responce > 0) {
-                return "Data viewed successfully";
-            } else {
-                return "Data not viewed";
+            preparedStatement.setInt(1, Integer.parseInt(operation.toString()));
+
+            ResultSet responce = preparedStatement.executeQuery();
+            AllocationDTO allocations = new AllocationDTO();
+
+            if(responce.next()) {
+
+                allocations.setAllocation_id(responce.getInt("allocation_id"));
+                allocations.setRoom_id(responce.getString("room_id"));
+                allocations.setAllocation_date(responce.getDate("allocation_date"));
+                allocations.setStudent_id(responce.getString("student_id"));
+
+                return allocations;
+            }else {
+                return null;
             }
+
         } catch (Exception e) {
             return "Error occured while viewing allocation operation";
         }
