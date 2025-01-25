@@ -11,7 +11,7 @@ public class StudentManagementInterface {
         System.out.println("[2] Remove Students\n");
         System.out.println("[3] Update Student\n");
         System.out.println("[4] View Student Details\n");
-        System.out.println("[0] Exit\n");
+        System.out.println("[0] Main Menu\n");
 
         int optionStudentManagemt = Option.nextInt();
 
