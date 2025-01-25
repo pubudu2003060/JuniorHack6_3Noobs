@@ -1,5 +1,8 @@
 package org.example.interfaces;
 
+import org.example.databaseConnection.DatabaseConnection;
+
+import java.sql.Connection;
 import java.util.Scanner;
 
 public class AddHostelsInterface {
@@ -12,6 +15,7 @@ public class AddHostelsInterface {
         String hostelID = sc.nextLine();
         System.out.println("Enter number of Hostel Rooms: ");
         int numberOfHostelRooms = sc.nextInt();
+
 
         return 1;
     }
