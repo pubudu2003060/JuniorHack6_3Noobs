@@ -12,7 +12,7 @@ public class DeleteOperationStudent implements Operation {
 
     private Object deleteOperation(Connection databaseConnection, Object operation) {
 
-        String sql = "delete from students where id = ?";
+        String sql = "delete from students where student_id = ?";
 
         try (PreparedStatement preparedStatement = databaseConnection.prepareStatement(sql)) {
 

@@ -8,7 +8,6 @@ import java.sql.PreparedStatement;
 
 public class AddoperationStudent implements Operation {
 
-
     @Override
     public Object operation(Connection databaseConnection, Object operation) {
         return addOperation(databaseConnection, operation);
@@ -20,7 +19,7 @@ public class AddoperationStudent implements Operation {
         StudentDTO studentDTO = (StudentDTO) operation;
 
         try (PreparedStatement preparedStatement = databaseConnection.prepareStatement(sql)) {
-            preparedStatement.setInt(1,studentDTO.getStudent_id());
+            preparedStatement.setString(1,studentDTO.getStudent_id());
             preparedStatement.setString(2, studentDTO.getName());
             preparedStatement.setInt(3, studentDTO.getAge());
             preparedStatement.setString(4, studentDTO.getDepartment());

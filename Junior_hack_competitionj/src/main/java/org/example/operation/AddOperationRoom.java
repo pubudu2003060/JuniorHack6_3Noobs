@@ -1,5 +1,6 @@
 package org.example.operation;
 
+import org.example.DTO.RoomsDTO;
 import org.example.databaseConnection.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,12 +17,17 @@ public class AddOperationRoom implements Operation {
         String sql = "insert into rooms(room_id,hostel_id,room_number,capacity,available_capacity) values(?,?,?,?,?)";
 
         try (PreparedStatement preparedStatement = databaseConnection.prepareStatement(sql)) {
-            preparedStatement.setString(1, operation.toString());
-            preparedStatement.setString(2, operation.toString());
-            preparedStatement.setString(3, operation.toString());
-            preparedStatement.setString(4, operation.toString());
-            preparedStatement.setString(5, operation.toString());
+
+            RoomsDTO roomDTO = (RoomsDTO) operation;
+
+            preparedStatement.setString(1, roomDTO.getRoom_id());
+            preparedStatement.setString(2, roomDTO.getHostel_id());
+            preparedStatement.setInt(3, roomDTO.getRoom_number());
+            preparedStatement.setInt(4,roomDTO.getCapacity());
+            preparedStatement.setInt(5, roomDTO.getAvailable_capacity());
+
             int responce = preparedStatement.executeUpdate();
+
             if (responce > 0) {
                 return "Data added successfully";
             } else {
