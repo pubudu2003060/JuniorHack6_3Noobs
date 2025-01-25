@@ -1,19 +1,16 @@
 package org.example.operation;
 
-import org.example.databaseConnection.DatabaseConnection;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class AddoperationStudent implements Operation {
-
+public class DeleteOperationStudent implements Operation {
 
     @Override
     public Object operation(Connection databaseConnection, Object operation) {
-        return addOperation(databaseConnection, operation);
+        return deleteOperation(databaseConnection, operation);
     }
 
-    private Object addOperation(Connection databaseConnection, Object operation) {
+    private Object deleteOperation(Connection databaseConnection, Object operation) {
 
         String sql = "insert into student(student_id,name,age,department) values(?,?,?,?)";
 
@@ -32,6 +29,4 @@ public class AddoperationStudent implements Operation {
             return "Error occured while adding operation";
         }
     }
-
-
 }
