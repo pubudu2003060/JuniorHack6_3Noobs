@@ -12,21 +12,21 @@ public class DeleteOperationStudent implements Operation {
 
     private Object deleteOperation(Connection databaseConnection, Object operation) {
 
-        String sql = "insert into student(student_id,name,age,department) values(?,?,?,?)";
+        String sql = "delete from students where id = ?";
 
         try (PreparedStatement preparedStatement = databaseConnection.prepareStatement(sql)) {
+
             preparedStatement.setString(1, operation.toString());
-            preparedStatement.setString(2, operation.toString());
-            preparedStatement.setString(3, operation.toString());
-            preparedStatement.setString(4, operation.toString());
+
             int responce = preparedStatement.executeUpdate();
+
             if (responce > 0) {
-                return "Data added successfully";
+                return "Data delete successfully";
             } else {
-                return "Data not added";
+                return "Data deleted fail";
             }
         } catch (Exception e) {
-            return "Error occured while adding operation";
+            return "Error occured while delete operation: " + e.getMessage();
         }
     }
 }
