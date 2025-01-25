@@ -19,7 +19,8 @@ public class HostelmanagementInterface {
         switch (optionHostelManagement) {
             case 1:AddHostelsInterface.createAddHostelDetailsInterface();break;
             case 3:ViewARoomByHostelIdInterface.creatViewRoomByHostelIdInterface();break;
-            case 2:
+            case 2:UpdateHostelDetailsInterface.createUpdateHostelDetailsInterface();break;
+            case 4:RoomManagemtInterface.createRoomManagementInterface();break;
         }
         return optionHostelManagement;
     }

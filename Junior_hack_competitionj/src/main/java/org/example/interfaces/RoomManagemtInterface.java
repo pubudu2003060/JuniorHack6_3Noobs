@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class RoomManagemtInterface {
 
-    public int createRoomManagementInterface() {
+    public static int createRoomManagementInterface() {
         Scanner option = new Scanner(System.in);
 
         System.out.println("Rooms Management.....\n\n");
