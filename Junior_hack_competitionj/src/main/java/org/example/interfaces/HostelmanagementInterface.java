@@ -12,7 +12,7 @@ public class HostelmanagementInterface {
         System.out.println("[2] Update hostel information\n");
         System.out.println("[3] View Hostel Details\n");
         System.out.println("[4] Room Management\n");
-        System.out.println("[0] Exit\n");
+        System.out.println("[0] Main Menu\n");
 
         int optionHostelManagement = input.nextInt();
         return optionHostelManagement;
