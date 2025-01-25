@@ -21,7 +21,7 @@ public class Application {
                 case 1:hostelmanagementInterface.createHostelmanagementInterface();break;
                 case 2:studentManagementInterface.createStudentManagement();break;
                 case 3:studentAllocationManagentInterface.createStudentAllocationManagemntInterface();break;
-                case 4:run = false;break;
+                case 0:run = false;break;
                 default: System.out.println("Invalid input");
             }
         }
