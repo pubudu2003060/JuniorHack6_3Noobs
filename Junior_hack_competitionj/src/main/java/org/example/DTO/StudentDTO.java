@@ -2,7 +2,7 @@ package org.example.DTO;
 
 public class StudentDTO {
 
-    private int student_id;
+    private String student_id;
     private String name;
     private int age;
     private String department;
@@ -10,18 +10,18 @@ public class StudentDTO {
     public StudentDTO() {
     }
 
-    public StudentDTO(int student_id, String name, int age, String department) {
+    public StudentDTO(String student_id, String name, int age, String department) {
         this.student_id = student_id;
         this.name = name;
         this.age = age;
         this.department = department;
     }
 
-    public int getStudent_id() {
+    public String getStudent_id() {
         return student_id;
     }
 
-    public void setStudent_id(int student_id) {
+    public void setStudent_id(String student_id) {
         this.student_id = student_id;
     }
 

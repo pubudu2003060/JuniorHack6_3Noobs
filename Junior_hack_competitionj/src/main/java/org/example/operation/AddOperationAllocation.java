@@ -1,5 +1,6 @@
 package org.example.operation;
 
+import org.example.DTO.AllocationDTO;
 import org.example.databaseConnection.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,13 +14,15 @@ public class AddOperationAllocation implements Operation {
 
     private Object addOperation(Connection databaseConnection, Object operation) {
 
-        String sql = "insert into allocations(allocation_id,student_id,room_id,allocation_date) values(?,?,?,?)";
+        String sql = "insert into allocations(student_id,room_id) values(?,?)";
 
         try (PreparedStatement preparedStatement = databaseConnection.prepareStatement(sql)) {
-            preparedStatement.setString(1, operation.toString());
-            preparedStatement.setString(2, operation.toString());
-            preparedStatement.setString(3, operation.toString());
-            preparedStatement.setString(4, operation.toString());
+
+            AllocationDTO allocationDTO = (AllocationDTO) operation;
+
+            preparedStatement.setString(2, allocationDTO.getStudent_id());
+            preparedStatement.setString(3, allocationDTO.getRoom_id());
+
             int responce = preparedStatement.executeUpdate();
             if (responce > 0) {
                 return "Data added successfully";
