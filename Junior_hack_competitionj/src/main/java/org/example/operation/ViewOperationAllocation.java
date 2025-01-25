@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ViewOperationAllocation implements Operation {
+
     @Override
     public Object operation(Connection databaseConnection, Object operation) {
         return viewAllocationOperation(databaseConnection, operation);
