@@ -3,7 +3,7 @@ package org.example.interfaces;
 import java.util.Scanner;
 
 public class UpdateRecordInterface {
-    public int createUpdateRecordInterface(){
+    public static int createUpdateRecordInterface(){
         System.out.println("Update Student...\n\n");
         Scanner input = new Scanner(System.in);
         System.out.println("Student ID(eg: abc0001): ");

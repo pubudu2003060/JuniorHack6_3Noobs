@@ -5,7 +5,7 @@ import org.w3c.dom.ls.LSOutput;
 import java.util.Scanner;
 
 public class ViewARecordInterface {
-    public int createViewAStudentRecord() {
+    public static int createViewAStudentRecord() {
         System.out.println("View Student details\n");
         Scanner input = new Scanner(System.in);
         System.out.print("Enter Student ID: ");

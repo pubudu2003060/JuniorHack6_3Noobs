@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MainInterface {
 
-    public int createMainPage(){
+    public static int createMainPage(){
 
         Scanner mainOption = new Scanner(System.in);
         System.out.println("--------Welcome to Hostel Management System--------");

@@ -3,7 +3,7 @@ package org.example.interfaces;
 import java.util.Scanner;
 
 public class RemoveStudentInterface {
-    public String craeteRemoveStudentInterface() {
+    public static String craeteRemoveStudentInterface() {
         System.out.println("Removing a student....\n");
         Scanner option=new Scanner(System.in);
         System.out.println("Student Id");
