@@ -6,7 +6,6 @@ public class StudentAllocationManagentInterface {
     public int createStudentAllocationManagemntInterface(){
 
 
-
             Scanner input = new Scanner(System.in);
 
             System.out.println("Student Allocation Management.....\n\n");
