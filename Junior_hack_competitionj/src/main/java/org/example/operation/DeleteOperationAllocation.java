@@ -3,7 +3,7 @@ package org.example.operation;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class DeleteOperationRoom implements Operation {
+public class DeleteOperationAllocation implements Operation {
 
     @Override
     public Object operation(Connection databaseConnection, Object operation) {
@@ -12,7 +12,7 @@ public class DeleteOperationRoom implements Operation {
 
     private Object deleteOperation(Connection databaseConnection, Object operation) {
 
-        String sql = "delete from rooms where room_id = ?";
+        String sql = "delete from allocations where allocation_id = ?";
 
         try (PreparedStatement preparedStatement = databaseConnection.prepareStatement(sql)) {
 
